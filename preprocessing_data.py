@@ -33,22 +33,5 @@ for i in range(0, len(data), 20):
     offline.plot(fig, filename='dataset/images/{}.html'.format(i),
                      image='png', auto_open=False, show_link=False, image_filename='dataset/images/{}.png'.format(i))
 
-# import time
-# from selenium import webdriver
-#
-# profile = webdriver.FirefoxProfile()
-# profile.set_preference('browser.download.folderList', 2)  # custom location
-# profile.set_preference('browser.download.manager.showWhenStarting', False)
-# profile.set_preference('browser.download.dir', '/tmp')
-# profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'image/png')
-#
-# driver = webdriver.Firefox(firefox_profile=profile)
-# import glob, os
-# os.chdir("dataset/images")
-# for file in glob.glob("*.html"):
-#     #file:///home/ros/ROS/research/Deep_Stock_Representation_learning%20-%20from_candlestick_charts_to_investment_decisions/dataset/images/4100.html
-#     driver.get("file:///home/ros/ROS/research/Deep_Stock_Representation_learning%20-%20from_candlestick_charts_to_investment_decisions/dataset/images/{}".format(file))
-#     export_button = driver.find_element_by_xpath("//a[@data-title='Download plot as a png']")
-#     export_button.click()
-#     time.sleep(10)
-#     driver.quit()
+# resize 224x224 imagemagick
+# find . -maxdepth 1 -iname "*.png" | xargs -L1 -I{} convert -adaptive-resize 224x224! "{}" "{}"
