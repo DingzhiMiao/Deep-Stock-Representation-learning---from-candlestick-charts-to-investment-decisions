@@ -30,4 +30,4 @@ def fetch_yahoo_data(ticker, start_date, end_date, fname, max_attempt, check_exi
 
 # fetch all data
 for ticker in set(stock_list):
-    fetch_yahoo_data(ticker, "2000-01-04", "2017-05-14","{}.csv".format(ticker), 10)
+    fetch_yahoo_data(ticker, "2000-01-04", "2017-05-14", "{}.csv".format(ticker), 10)
